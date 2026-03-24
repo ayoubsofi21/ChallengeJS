@@ -68,7 +68,7 @@
     </style>
   </head>
   <body>
-    <div class="step" id="step1">
+    <!-- <div class="step" id="step1">
       <h2>Step 1</h2>
       <input placeholder="Name" />
       <button id="next1">Next</button>
@@ -86,6 +86,18 @@
       <input placeholder="Password" />
       <button id="prev3">Previous</button>
       <button id="submit">Submit</button>
+    </div> -->
+    <div class="step">
+      <input type="number" id="length" placeholder="Length" />
+      <div style="display: flex">
+        <input type="checkbox" id="uppercase" /> Uppercase
+        <input type="checkbox" id="numbers" /> Numbers
+        <input type="checkbox" id="symbols" /> Symbols
+      </div>
+      <button id="generate" style="background-color: #4caf50; color: white">
+        Generate
+      </button>
+      <input type="text" id="password" readonly style="outline: none" />
     </div>
     <script src="multForm.js"></script>
   </body>
