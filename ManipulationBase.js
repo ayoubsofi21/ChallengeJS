@@ -36,3 +36,18 @@ const buttont = document.querySelector(".toggle");
 buttont.addEventListener("click", () => {
   card.classList.toggle("dark");
 });
+// challenge 5
+const quotes = [
+  "Le succès est la somme de petits efforts répétés.",
+  "N'abandonne jamais.",
+  "La pratique rend parfait.",
+  "Le code est comme l'humour.",
+];
+
+const text = document.querySelector("#quote");
+const generateButton = document.querySelector("#generate");
+
+generateButton.addEventListener("click", () => {
+  const random = Math.floor(Math.random() * quotes.length);
+  text.textContent = quotes[random];
+});
