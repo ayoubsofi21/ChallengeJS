@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logique & Formulaire</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .step {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        width: 300px;
+        transition: all 0.3s ease;
+      }
+
+      .step h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .step input {
+        width: 100%;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+
+      .step button {
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .step button:hover {
+        opacity: 0.9;
+      }
+
+      #next1,
+      #next2,
+      #submit {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      #prev2,
+      #prev3 {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="step" id="step1">
+      <h2>Step 1</h2>
+      <input placeholder="Name" />
+      <button id="next1">Next</button>
+    </div>
+
+    <div class="step" id="step2" style="display: none">
+      <h2>Step 2</h2>
+      <input placeholder="Email" />
+      <button id="prev2">Previous</button>
+      <button id="next2">Next</button>
+    </div>
+
+    <div class="step" id="step3" style="display: none">
+      <h2>Step 3</h2>
+      <input placeholder="Password" />
+      <button id="prev3">Previous</button>
+      <button id="submit">Submit</button>
+    </div>
+    <script src="multForm.js"></script>
+  </body>
+</html>
