@@ -30,3 +30,9 @@ const displayText = document.querySelector(".displayText");
 input.addEventListener("input", () => {
   displayText.textContent = input.value;
 });
+//challenge 4
+const card = document.querySelector(".card");
+const buttont = document.querySelector(".toggle");
+buttont.addEventListener("click", () => {
+  card.classList.toggle("dark");
+});
