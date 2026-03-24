@@ -24,3 +24,9 @@ dec.addEventListener("click", () => {
 reset.addEventListener("click", () => {
   count.innerHTML = 0;
 });
+//challenge 3
+const input = document.querySelector("input");
+const displayText = document.querySelector(".displayText");
+input.addEventListener("input", () => {
+  displayText.textContent = input.value;
+});
