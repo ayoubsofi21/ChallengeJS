@@ -25,23 +25,37 @@
 //   step2.style.display = "block";
 //   step3.style.display = "none";
 // });
-//challenge of generate mot de pass
-const generate = document.getElementById("generate");
-const passwordfield = document.getElementById("password");
 
-generate.addEventListener("click", () => {
-  const length = parseInt(document.getElementById("length").value) || 8;
-  const upper = document.getElementById("uppercase").checked;
-  const numbers = document.getElementById("numbers").checked;
-  const symbols = document.getElementById("symbols").checked;
-  let chars = "abcdefghijklmnopqrstuvwxyz";
-  if (upper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (numbers) chars += "0123456789";
-  if (symbols) chars += "!@#$%^&*()";
-  let password = "";
-  for (let i = 0; i < length; i++) {
-    const index = Math.floor(Math.random() * chars.length);
-    password += chars[index];
+//challenge of generate mot de pass
+// const generate = document.getElementById("generate");
+// const passwordfield = document.getElementById("password");
+
+// generate.addEventListener("click", () => {
+//   const length = parseInt(document.getElementById("length").value) || 8;
+//   const upper = document.getElementById("uppercase").checked;
+//   const numbers = document.getElementById("numbers").checked;
+//   const symbols = document.getElementById("symbols").checked;
+//   let chars = "abcdefghijklmnopqrstuvwxyz";
+//   if (upper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   if (numbers) chars += "0123456789";
+//   if (symbols) chars += "!@#$%^&*()";
+//   let password = "";
+//   for (let i = 0; i < length; i++) {
+//     const index = Math.floor(Math.random() * chars.length);
+//     password += chars[index];
+//   }
+//   passwordfield.value = password;
+// });
+
+// challenge of max caracters in textarea
+const textarea = document.querySelector("textarea");
+const count = document.getElementById("count");
+textarea.addEventListener("input", () => {
+  let leng = textarea.value.length;
+  count.textContent = `${leng}/280`;
+  if (leng > 280) {
+    count.style.color = "red";
+  } else {
+    count.style.color = "black";
   }
-  passwordfield.value = password;
 });

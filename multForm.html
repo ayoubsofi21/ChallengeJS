@@ -87,7 +87,7 @@
       <button id="prev3">Previous</button>
       <button id="submit">Submit</button>
     </div> -->
-    <div class="step">
+    <!-- <div class="step">
       <input type="number" id="length" placeholder="Length" />
       <div style="display: flex">
         <input type="checkbox" id="uppercase" /> Uppercase
@@ -98,7 +98,37 @@
         Generate
       </button>
       <input type="text" id="password" readonly style="outline: none" />
+    </div> -->
+    <!-- <div class="step">
+      <textarea name="input" id="input-textarea" cols="40" rows="20"></textarea>
+      <p id="count">0/280</p>
+    </div> -->
+    <div id="stars">
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
     </div>
+
+    <script>
+      const stars = document.querySelectorAll(".star");
+      let rating = 0;
+
+      stars.forEach((star, index) => {
+        star.addEventListener("mouseover", () => {
+          stars.forEach((s, i) => (s.textContent = i <= index ? "★" : "☆"));
+        });
+
+        star.addEventListener("click", () => {
+          rating = index + 1;
+        });
+
+        star.addEventListener("mouseleave", () => {
+          stars.forEach((s, i) => (s.textContent = i < rating ? "★" : "☆"));
+        });
+      });
+    </script>
     <script src="multForm.js"></script>
   </body>
 </html>
