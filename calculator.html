@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-200 flex justify-center items-center h-screen">
+    <div class="bg-black text-white rounded-xl p-6 w-[300px] shadow-lg">
+      <h1 class="text-center text-2xl font-bold mb-4">Calculator</h1>
+
+      <input
+        type="text"
+        id="input"
+        class="w-full h-12 mb-4 text-black text-right px-2 rounded-md"
+      />
+
+      <div class="grid grid-cols-4 gap-2">
+        <div
+          id="AC"
+          class="cell bg-gray-700 p-3 text-center rounded cursor-pointer"
+        >
+          AC
+        </div>
+        <div class="cell bg-gray-700 p-3 text-center rounded cursor-pointer">
+          +/-
+        </div>
+        <div class="cell bg-gray-700 p-3 text-center rounded cursor-pointer">
+          %
+        </div>
+        <div class="cell bg-orange-500 p-3 text-center rounded cursor-pointer">
+          /
+        </div>
+
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          7
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          8
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          9
+        </div>
+        <div class="cell bg-orange-500 p-3 text-center rounded cursor-pointer">
+          *
+        </div>
+
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          4
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          5
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          6
+        </div>
+        <div class="cell bg-orange-500 p-3 text-center rounded cursor-pointer">
+          -
+        </div>
+
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          1
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          2
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          3
+        </div>
+        <div class="cell bg-orange-500 p-3 text-center rounded cursor-pointer">
+          +
+        </div>
+
+        <div
+          class="cell bg-gray-600 p-3 text-center rounded cursor-pointer col-span-2"
+        >
+          0
+        </div>
+        <div class="cell bg-gray-600 p-3 text-center rounded cursor-pointer">
+          .
+        </div>
+        <div
+          id="egal"
+          class="cell bg-green-500 p-3 text-center rounded cursor-pointer"
+        >
+          =
+        </div>
+      </div>
+    </div>
+    <script>
+      const cells = document.querySelectorAll(".cell");
+      const input = document.getElementById("input");
+      const AC = document.getElementById("AC");
+      const egal = document.getElementById("egal");
+      cells.forEach((cell) => {
+        cell.addEventListener("click", () => {
+          //   console.log(cell.textContent);
+          const value = cell.textContent.trim();
+          if (value !== "AC" && value !== "=") {
+            input.value += value;
+          }
+        });
+      });
+      egal.addEventListener("click", () => {
+        input.value = eval(input.value);
+      });
+      AC.addEventListener("click", () => {
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
