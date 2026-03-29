@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onglets Simples Débutant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full bg-white p-6 rounded shadow-lg">
+      <div class="flex mb-4">
+        <button
+          onclick="showTab('tab1')"
+          id="btn1"
+          class="px-4 py-2 border-b-2 border-blue-600 text-blue-600"
+        >
+          Onglet 1
+        </button>
+        <button
+          onclick="showTab('tab2')"
+          id="btn2"
+          class="px-4 py-2 text-gray-500"
+        >
+          Onglet 2
+        </button>
+        <button
+          onclick="showTab('tab3')"
+          id="btn3"
+          class="px-4 py-2 text-gray-500"
+        >
+          Onglet 3
+        </button>
+      </div>
+
+      <div id="tab1">Contenu de l'Onglet 1</div>
+      <div id="tab2" class="hidden">Contenu de l'Onglet 2</div>
+      <div id="tab3" class="hidden">Contenu de l'Onglet 3</div>
+    </div>
+
+    <script>
+      function showTab(id) {
+        document.getElementById("tab1").classList.add("hidden");
+        document.getElementById("tab2").classList.add("hidden");
+        document.getElementById("tab3").classList.add("hidden");
+        document.getElementById(id).classList.remove("hidden");
+
+        document
+          .getElementById("btn1")
+          .classList.remove("border-b-2", "border-blue-600", "text-blue-600");
+        document
+          .getElementById("btn2")
+          .classList.remove("border-b-2", "border-blue-600", "text-blue-600");
+        document
+          .getElementById("btn3")
+          .classList.remove("border-b-2", "border-blue-600", "text-blue-600");
+
+        document
+          .getElementById("btn" + id.slice(-1))
+          .classList.add("border-b-2", "border-blue-600", "text-blue-600");
+      }
+    </script>
+  </body>
+</html>
