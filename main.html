@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>challenge 9</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="pseudo" placeholder="Pseudo" /><br /><br />
+
+      <input type="email" id="email" placeholder="Email" /><br /><br />
+
+      <input type="password" id="password" placeholder="Password" /><br /><br />
+
+      <input type="number" id="age" placeholder="Age" /><br /><br />
+
+      <input type="date" id="birthdate" /><br /><br />
+
+      <select id="country">
+        <option value="">Choisir...</option>
+        <option value="maroc">Maroc</option>
+        <option value="france">France</option></select
+      ><br /><br />
+
+      <label> <input type="checkbox" id="terms" /> Accepter CGU </label
+      ><br /><br />
+
+      <label> <input type="radio" name="genre" value="homme" /> Homme </label>
+
+      <label> <input type="radio" name="genre" value="femme" /> Femme </label>
+
+      <br /><br />
+
+      <button type="submit">Envoyer</button>
+    </form>
+    <script>
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const pseudo = document.getElementById("pseudo");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const age = document.getElementById("age");
+        const birthdate = document.getElementById("birthdate");
+        const country = document.getElementById("country");
+        const terms = document.getElementById("terms");
+        const gender = document.querySelector('input[name="genre"]:checked');
+
+        if (pseudo.value.length < 4) {
+          alert("Pseudo invalide");
+        }
+
+        if (!email.value.includes("@") || !email.value.includes(".")) {
+          alert("Email invalide");
+        }
+
+        if (password.value.length < 8) {
+          alert("Password trop court");
+        }
+
+        if (age.value < 18 || age.value > 99) {
+          alert("Age invalide");
+        }
+
+        const today = new Date();
+        const birth = new Date(birthdate.value);
+
+        if (birth > today) {
+          alert("Date invalide");
+        }
+
+        if (country.value === "") {
+          alert("Choisir un pays");
+        }
+
+        if (!terms.checked) {
+          alert("Vous devez accepter les CGU");
+        }
+
+        if (!gender) {
+          alert("Choisir un genre");
+        }
+      });
+    </script>
+  </body>
+</html>
